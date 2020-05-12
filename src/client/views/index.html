@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/resets.css">
+    <link rel="stylesheet" href="../styles/home.css"> 
+    <link rel="stylesheet" href="../styles/utilities.css"> 
+    <link rel="stylesheet" href="../styles/trip.css">
+    <link rel="stylesheet" href="../styles/button.css"> 
+
+
+
+    <title>Tourism</title>
+</head>
+<body>
+
+    <div class="pagewrap">
+        <div class="home-container">
+            <header class="mgn-btm-4">
+                <div class="logo">Travel</div>
+            </header>
+    
+            <div class="form-container">
+                <form action="submit" onsubmit="return handleSubmit(event)">
+                    <label for="location">Destination
+                        <input type="text" class="form__input mgn-top-2 mgn-btm-4" id="location" value="" placeholder="City, Country">
+                    </label>
+        
+                    <label for="date">Departure Date:
+                        <input type="date" class="form__input mgn-top-2 mgn-btm-4" id="date" value="">
+                    </label>
+        
+                    <input type="submit" class="submit" name="" value="Submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </div>    
+        </div>
+
+        <div class="trips">
+            <div class="trip">
+                <div class="trip__img"></div>
+                <div class="trip__content">
+                    <h1 class="trip__heading">My trip to Paris, France</h1>
+                    <h1 class="trip__heading mgn-btm-2">Departing</h1>
+                    <button class="btn mgn-btm-2 btn--save">save trip</button>
+                    <button class="btn btn--remove">remove trip</button>
+    
+                    <h2 class="location mgn-top-2">Paris, France</h2>
+                    <h3 class="city-weather mgn-top-2">Typical Weather for then is: </h3>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+</body>
+</html>

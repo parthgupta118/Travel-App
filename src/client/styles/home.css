@@ -1,0 +1,85 @@
+html {
+    font-size: 67%;
+}
+
+.pagewrap {
+    width: 100%;
+    margin: auto;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+.logo {
+    padding: 2rem 4rem;
+    font-size: 4rem;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* .container {
+    margin: 8rem auto;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 80vw;
+    grid-template-rows: repeat(5, 40rem);
+    grid-template-areas: "box-1" "box-2" "box-3" "box-4" "box-5";
+    grid-gap: 2rem;
+} */
+
+.home-container {
+    height: 100vh;
+    position: relative;
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0,0,0,0.5)), url("../assets/pic-1.jpg");
+    background-size: cover;
+}
+
+.form-container {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 50%;
+    padding: 3rem;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to right bottom, rgba(128, 214, 113, 0.8), rgba(40, 180, 133, 0.7));
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+
+.form__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form__input:focus {
+    outline: none;
+    border-bottom: 3px solid #3c6635;
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus:invalid {
+    border-bottom: 3px solid orange;
+}
+
+.submit {
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    border-radius: 3px;
+    margin: auto auto;  
+    border: none;
+    background-color: rgba(238, 121, 11, 0.8);
+    color: white;
+}
+
+.submit:hover {
+    background-color: rgba(238, 121, 11, 1);
+    cursor: pointer;
+}
