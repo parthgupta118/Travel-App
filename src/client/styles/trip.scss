@@ -1,50 +1,52 @@
 .trip {
     display: grid;
-    padding: 8vh 0rem;
-    grid-template-columns: 100vw;
     grid-template-rows: 35vh;
     grid-template-areas: "img"
                          "text";
     grid-gap: 2rem;
     background-image: linear-gradient(to right bottom, rgb(113, 190, 100), rgba(43, 133, 95, 0.9));
+    margin-bottom: 2rem;
 }
 
 .trip__img {
     grid-area: img;
     background-image: url("../assets/pic-1.jpg");
     background-size: cover;
-
 }
 
 .trip__content {
-    width: 80%;
+    padding: 2.5rem 0rem;
     margin: 0 auto;
     grid-area: text;
 }
 
 .trip__heading {
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 .location {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .city-weather {
     font-size: 1.5rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
 
     .trip {
-    grid-template-columns: 40vw 50vw;
-    grid-template-rows: 35vh;
+    grid-template-columns: 40vw 40vw;
+    grid-template-rows: 40vh;
     grid-template-areas: "img text";
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     }
 
     .trip {
-        padding-left: 2rem;
+        padding: 2rem;
+    }
+
+    .trip__heading {
+        font-size: 2.5;
     }
 }

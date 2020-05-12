@@ -1,5 +1,5 @@
-html {
-    font-size: 67%;
+body {
+    font-size: 100%;
 }
 
 .pagewrap {
@@ -39,17 +39,18 @@ html {
     width: 50%;
     left: 50%;
     top: 50%;
-    padding: 3rem;
+    padding: 2rem;
     transform: translate(-50%, -50%);
     background-image: linear-gradient(to right bottom, rgba(128, 214, 113, 0.8), rgba(40, 180, 133, 0.7));
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
     overflow: hidden;
+    font-weight: 700;
 }
 
 .form__input {
-    font-size: 1.5rem;
-    padding: 1.5rem 2rem;
+    font-size: .8rem;
+    padding: 1rem 1.5rem;
     font-family: inherit;
     color: rgba(0, 0, 0, 0.7);
     border-radius: 3px;
@@ -57,6 +58,7 @@ html {
     border-bottom: 3px solid transparent;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
 }
 
 .form__input:focus {
@@ -65,13 +67,13 @@ html {
     box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
-.form-input:focus:invalid {
+.form__input:focus:invalid {
     border-bottom: 3px solid orange;
 }
 
 .submit {
-    padding: 1rem 3rem;
-    font-size: 2rem;
+    padding: .7rem 1.5rem;
+    font-size: 1.2rem;
     border-radius: 3px;
     margin: auto auto;  
     border: none;
@@ -82,4 +84,39 @@ html {
 .submit:hover {
     background-color: rgba(238, 121, 11, 1);
     cursor: pointer;
+}
+
+@media (min-width: 800px)
+{
+    .form-container {
+        font-size: 2rem;
+        padding: 3rem;
+    }   
+    
+    .form__input {
+        font-size: 1.5rem;
+        padding: 1.2rem 1.5rem;
+        color: rgba(0, 0, 0, 0.7);
+        border-radius: 3px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 100%;
+    }
+
+    .submit {
+        padding: 1rem 3rem;
+        font-size: 1.8rem;  
+        color: white;
+    }
+    
+}
+
+.trips {
+    background-color: whitesmoke;
+    padding: 0rem 2.5rem;
+}
+
+.trips__heading {
+    font-size: 3rem;
+    padding: 3rem 0rem;
 }
