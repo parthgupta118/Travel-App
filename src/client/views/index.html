@@ -3,13 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../styles/resets.css">
-    <link rel="stylesheet" href="../styles/home.css"> 
-    <link rel="stylesheet" href="../styles/utilities.css"> 
-    <link rel="stylesheet" href="../styles/trip.css">
-    <link rel="stylesheet" href="../styles/button.css">  -->
-
-
 
     <title>Tourism</title>
 </head>
@@ -21,38 +14,49 @@
                 <div class="logo">Travel</div>
             </header>
     
-            <div class="form-container">
-                <form action="submit" onsubmit="return handleSubmit(event)">
-                    <label for="location">Destination
-                        <input type="text" class="form__input mgn-top-1 " id="location" value="" placeholder="City, Country">
-                    </label>
-        
-                    <label for="date">Departure Date:
-                        <input type="date" class="form__input mgn-top-1" id="date" value="">
-                    </label>
-        
-                    <input type="submit" class="submit" name="" value="Submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </div>    
+            <form class="form-container">
+                <label for="location">Destination
+                    <input type="text" class="form__input mgn-top-1 " id="location" value="" placeholder="City, Country">
+                </label>
+    
+                <label for="start-date">Departure Date
+                    <input type="date" class="form__input mgn-top-1" id="start-date" value="">
+                </label>
+
+                <label for="end-date">Return Date
+                    <input type="date" class="form__input mgn-top-1 mgn-btm-1" id="end-date" value="">
+                </label>
+    
+                <button id="submit" class="submit" type="Submit">Submit</button>
+            </form>   
         </div>
 
-        <div class="trips">
+        <div class="trips" id="section__trips">
             <h1 class="trips__heading">Travel Planner</h1>
             <div class="trip">
-                <div class="trip__img"></div>
+                <div class="trip__img"><img id="location-pic" src="" alt="Location pic"></div>
                 <div class="trip__content">
-                    <h1 class="trip__heading">My trip to Paris, France</h1>
-                    <h1 class="trip__heading mgn-btm-2">Departing</h1>
-                    <button class="btn mgn-btm-2 btn--save">save trip</button>
+                    <h1 class="trip__heading">My trip to <span class="get-location"></span></h1>
+                    <h1 class="trip__heading mgn-btm-2" id="get-trip-length"></h1>
+                    <button class="btn mgn-btm-1 btn--save" id="save-btn">save trip</button>
                     <button class="btn btn--remove">remove trip</button>
     
-                    <h2 class="location mgn-top-2">Paris, France</h2>
-                    <h3 class="city-weather mgn-top-2">Typical Weather for then is: </h3>
+                    <h2 class="location mgn-top-2 get-location"></h2>
+                    <h3 class="city-weather mgn-top-2">Typical Weather is: <br> <span id="weather"></span> </h3>
                 </div>
             </div>
         </div>
         
     </div>
-        
+    
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 </html>
