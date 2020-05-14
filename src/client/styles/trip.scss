@@ -33,11 +33,11 @@
     font-size: 1.5rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1080px) {
 
     .trip {
     grid-template-columns: 40vw 40vw;
-    grid-template-rows: 40vh;
+    grid-template-rows: 48vh;
     grid-template-areas: "img text";
     grid-gap: 1rem;
     }
@@ -47,6 +47,14 @@
     }
 
     .trip__heading {
-        font-size: 2.5;
+        font-size: 2.5rem;
+    }
+
+    .location {
+        font-size: 2.5rem;
+    }
+    
+    .city-weather {
+        font-size: 2rem;
     }
 }

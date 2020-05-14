@@ -1,122 +1,133 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-size: 100%;
+  font-size: 100%;
 }
 
 .pagewrap {
-    width: 100%;
-    margin: auto;
-    background-color: whitesmoke;
-    box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  background-color: whitesmoke;
+  box-sizing: border-box;
 }
 
 .logo {
-    padding: 2rem 4rem;
-    font-size: 4rem;
-    color: white;
-    letter-spacing: 2px;
-    font-weight: 700;
+  padding: 2rem 4rem;
+  font-size: 4rem;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
 
-/* .container {
-    margin: 8rem auto;
-    width: 80vw;
-    display: grid;
-    grid-template-columns: 80vw;
-    grid-template-rows: repeat(5, 40rem);
-    grid-template-areas: "box-1" "box-2" "box-3" "box-4" "box-5";
-    grid-gap: 2rem;
-} */
-
 .home-container {
-    height: 100vh;
-    position: relative;
-    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0,0,0,0.5)), url("../assets/pic-1.jpg");
-    background-size: cover;
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../assets/pic-1.jpg");
+  background-size: cover;
 }
 
 .form-container {
-    position: absolute;
-    width: 50%;
-    left: 50%;
-    top: 50%;
-    padding: 2rem;
-    transform: translate(-50%, -50%);
-    background-image: linear-gradient(to right bottom, rgba(128, 214, 113, 0.8), rgba(40, 180, 133, 0.7));
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    overflow: hidden;
-    font-weight: 700;
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 50%;
+  padding: 2rem;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(128, 214, 113, 0.8),
+    rgba(40, 180, 133, 0.7)
+  );
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  font-weight: 700;
 }
 
 .form__input {
-    font-size: .8rem;
-    padding: 1rem 1.5rem;
-    font-family: inherit;
+  font-size: 0.8rem;
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #3c6635;
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.form__input:focus:invalid {
+  border-bottom: 3px solid orange;
+}
+
+.submit {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+  background-color: rgba(238, 121, 11, 0.8);
+  color: white;
+  transform: all 80ms;
+}
+
+.submit:hover {
+  background-color: rgba(238, 121, 11, 1);
+  cursor: pointer;
+}
+
+.submit:active {
+  transform: scale(0.98);
+}
+
+.trips {
+  display: none;
+  background-color: whitesmoke;
+  padding: 0rem 2.5rem;
+}
+
+.trips__heading {
+  font-size: 3rem;
+  padding: 3rem 0rem;
+}
+
+
+@media (min-width: 940px) {
+  .form-container {
+    font-size: 2rem;
+    padding: 3rem;
+    height: 40rem;
+  }
+
+  .form__input {
+    font-size: 1.5rem;
+    padding: 1.2rem 1.5rem;
     color: rgba(0, 0, 0, 0.7);
     border-radius: 3px;
     border: none;
     border-bottom: 3px solid transparent;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 2rem;
-}
+  }
 
-.form__input:focus {
-    outline: none;
-    border-bottom: 3px solid #3c6635;
-    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.1);
-}
-
-.form__input:focus:invalid {
-    border-bottom: 3px solid orange;
-}
-
-.submit {
-    padding: .7rem 1.5rem;
-    font-size: 1.2rem;
-    border-radius: 3px;
-    margin: auto auto;  
-    border: none;
-    background-color: rgba(238, 121, 11, 0.8);
+  .submit {
+    margin: auto auto;
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
     color: white;
-}
-
-.submit:hover {
-    background-color: rgba(238, 121, 11, 1);
-    cursor: pointer;
-}
-
-@media (min-width: 800px)
-{
-    .form-container {
-        font-size: 2rem;
-        padding: 3rem;
-    }   
-    
-    .form__input {
-        font-size: 1.5rem;
-        padding: 1.2rem 1.5rem;
-        color: rgba(0, 0, 0, 0.7);
-        border-radius: 3px;
-        border: none;
-        border-bottom: 3px solid transparent;
-        width: 100%;
-    }
-
-    .submit {
-        padding: 1rem 3rem;
-        font-size: 1.8rem;  
-        color: white;
-    }
-    
-}
-
-.trips {
-    background-color: whitesmoke;
-    padding: 0rem 2.5rem;
-}
-
-.trips__heading {
-    font-size: 3rem;
-    padding: 3rem 0rem;
+  }
 }
