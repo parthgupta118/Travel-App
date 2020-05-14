@@ -1,5 +1,5 @@
 import {checkForDate } from './js/dateChecker';
-import { handleSubmit, handleSave } from './js/formHandler';
+import { handleSubmit, handleSave, handleRemove } from './js/formHandler';
 
 import './styles/button.scss';
 import './styles/home.scss';
@@ -13,5 +13,6 @@ console.log(checkForDate);
 export {
     checkForDate,
     handleSave,
-    handleSubmit 
+    handleSubmit,
+    handleRemove
 }

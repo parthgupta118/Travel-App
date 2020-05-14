@@ -14,6 +14,8 @@ app.use(express.static('dist'));
 app.use(cors());
 console.log(__dirname);
 
+//Global Variable
+const allData = [];
 
 // Start the server
 app.listen(8082, function() {
@@ -28,8 +30,9 @@ function validateUrl(url) {
 // Posting the data
 app.post('/addData', function(req, res) {
     const data = req.body;
-    res.json(data);
-    console.log(data);
+    allData.push(data);
+    console.log(allData);
+    res.send("The trip is saved")
 });
 
 module.exports = {

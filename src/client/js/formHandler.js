@@ -2,8 +2,10 @@
 // Initializing data of Geoname api
 const geonameBaseUrl =  "http://api.geonames.org/searchJSON?q=";
 const geonameUsername = "parth101";
+
 const btn = document.getElementById("submit");
 const savebtn = document.getElementById("save-btn");
+const removebtn = document.getElementById("remove-btn");
 
 let allData = {};
 
@@ -19,6 +21,7 @@ const pixabayApiKey = "16532197-9730337b17378a223478266a6";
 // Event listener to add function to existing HTML DOM element
 btn.addEventListener("click", handleSubmit);
 savebtn.addEventListener("click", handleSave);
+removebtn.addEventListener("click", handleRemove);
 
 // URL ENCODER
 const encodeUrl = (url) => {
@@ -79,7 +82,6 @@ const fetchData = (location, startDate, endDate) => {
         // Fetch Pixabay API
         .then( () => {
             var pixabayUrl = encodeUrl(`${pixabayBaseUrl}?key=${pixabayApiKey}&q=${location}&image_type=photo`);
-            console.log(pixabayUrl);
 
             fetch(pixabayUrl
             )
@@ -130,9 +132,11 @@ function handleSubmit(event) {
     fetchData(location, startDate, endDate);
 }
 
-function handleSave(allData) {
+function handleSave(event) {
 
-     const postData = (allData) => {
+     const postData = () => {
+        console.log(allData);
+         
         fetch('http://localhost:8082/addData',{
             method: "POST",
             credentials: "same-origin",
@@ -141,25 +145,29 @@ function handleSave(allData) {
             },
             body: JSON.stringify(allData)
         })
-        .then(res => res.json())
+        .then(res => res.send)
         .then( () => {
-            console.log(allData);
+            console.log(res);
         })
         .catch((error) => console.log(error));
 
         savebtn.disabled = "true";
         savebtn.innerText = "Saved";
-        // savebtn.style.pointerEvents = "none";
-
-
+        savebtn.style.pointerEvents = "none";
     }
 
     postData();
 }
 
+
+function handleRemove() {
+    document.getElementById("section__trips").style.display = "none";
+}
+
 export { handleSubmit,
         encodeUrl,
-        handleSave
+        handleSave,
+        handleRemove
     }
 
 
